@@ -1,0 +1,22 @@
+# Profile Enhancement Rules Template for Clash Verge
+# AI 分流：必须 prepend，保证先于订阅自带的同名域名规则命中
+prepend:
+  - DOMAIN-SUFFIX,claude.ai,🅰️ Claude
+  - DOMAIN-SUFFIX,anthropic.com,🅰️ Claude
+  - DOMAIN-SUFFIX,claudeusercontent.com,🅰️ Claude
+  - DOMAIN-SUFFIX,gemini.google.com,✨ Gemini
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com,✨ Gemini
+  - DOMAIN-SUFFIX,bard.google.com,✨ Gemini
+  - DOMAIN-SUFFIX,aistudio.google.com,✨ Gemini
+  - DOMAIN-SUFFIX,makersuite.google.com,✨ Gemini
+  - DOMAIN-SUFFIX,ai.google.dev,✨ Gemini
+  - DOMAIN-SUFFIX,notebooklm.google.com,✨ Gemini
+  - DOMAIN-SUFFIX,chatgpt.com,🤖 OpenAI
+  - DOMAIN-SUFFIX,openai.com,🤖 OpenAI
+  - DOMAIN-SUFFIX,oaistatic.com,🤖 OpenAI
+  - DOMAIN-SUFFIX,oaiusercontent.com,🤖 OpenAI
+  - DOMAIN-SUFFIX,sora.com,🤖 OpenAI
+  - DOMAIN-KEYWORD,openai,🤖 OpenAI
+  - DOMAIN-KEYWORD,chatgpt,🤖 OpenAI
+append: []
+delete: []

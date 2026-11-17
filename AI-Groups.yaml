@@ -1,0 +1,155 @@
+# Profile Enhancement Groups Template for Clash Verge
+# AI 智能分流：按国家优先级 + expected-status 纯净认证
+prepend:
+  - name: "🤖 OpenAI"
+    type: select
+    proxies:
+      - "♻️ OpenAI·自动"
+      - "♻️ 自动选择"
+      - "🚀 节点选择"
+      - DIRECT
+  - name: "♻️ OpenAI·自动"
+    type: fallback
+    proxies:
+      - "OpenAI·日"
+      - "OpenAI·新"
+      - "OpenAI·美"
+      - "♻️ 自动选择"
+  - name: "OpenAI·日"
+    type: fallback
+    include-all: true
+    filter: "(日本|东京|大阪|川日|泉日|埼玉|沪日|深日|JP|Japan|Tokyo|Osaka|NRT|KIX|TYO)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://chatgpt.com/cdn-cgi/trace"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "OpenAI·新"
+    type: fallback
+    include-all: true
+    filter: "(新加坡|狮城|坡|SG|Singapore|SIN)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://chatgpt.com/cdn-cgi/trace"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "OpenAI·美"
+    type: fallback
+    include-all: true
+    filter: "(美|US|United States|洛杉矶|圣何塞|西雅图|硅谷|凤凰城|达拉斯|波特兰|俄勒冈|拉斯维加斯|圣克拉拉|芝加哥|费利蒙|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|SFO)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://chatgpt.com/cdn-cgi/trace"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "🅰️ Claude"
+    type: select
+    proxies:
+      - "♻️ Claude·自动"
+      - "♻️ 自动选择"
+      - "🚀 节点选择"
+      - DIRECT
+  - name: "♻️ Claude·自动"
+    type: fallback
+    proxies:
+      - "Claude·美"
+      - "Claude·日"
+      - "Claude·新"
+      - "♻️ 自动选择"
+  - name: "Claude·美"
+    type: fallback
+    include-all: true
+    filter: "(美|US|United States|洛杉矶|圣何塞|西雅图|硅谷|凤凰城|达拉斯|波特兰|俄勒冈|拉斯维加斯|圣克拉拉|芝加哥|费利蒙|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|SFO)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://claude.ai/"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "Claude·日"
+    type: fallback
+    include-all: true
+    filter: "(日本|东京|大阪|川日|泉日|埼玉|沪日|深日|JP|Japan|Tokyo|Osaka|NRT|KIX|TYO)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://claude.ai/"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "Claude·新"
+    type: fallback
+    include-all: true
+    filter: "(新加坡|狮城|坡|SG|Singapore|SIN)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://claude.ai/"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "✨ Gemini"
+    type: select
+    proxies:
+      - "♻️ Gemini·自动"
+      - "♻️ 自动选择"
+      - "🚀 节点选择"
+      - DIRECT
+  - name: "♻️ Gemini·自动"
+    type: fallback
+    proxies:
+      - "Gemini·美"
+      - "Gemini·日"
+      - "Gemini·新"
+      - "♻️ 自动选择"
+  - name: "Gemini·美"
+    type: fallback
+    include-all: true
+    filter: "(美|US|United States|洛杉矶|圣何塞|西雅图|硅谷|凤凰城|达拉斯|波特兰|俄勒冈|拉斯维加斯|圣克拉拉|芝加哥|费利蒙|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|SFO)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://gemini.google.com/"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "Gemini·日"
+    type: fallback
+    include-all: true
+    filter: "(日本|东京|大阪|川日|泉日|埼玉|沪日|深日|JP|Japan|Tokyo|Osaka|NRT|KIX|TYO)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://gemini.google.com/"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+  - name: "Gemini·新"
+    type: fallback
+    include-all: true
+    filter: "(新加坡|狮城|坡|SG|Singapore|SIN)"
+    exclude-filter: "(港|HK|hk|HKG|Hong)"
+    url: "https://gemini.google.com/"
+    expected-status: 200
+    interval: 900
+    timeout: 5000
+    lazy: false
+    max-failed-times: 3
+
+append: []
+delete: []
